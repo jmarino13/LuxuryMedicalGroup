@@ -336,12 +336,12 @@ body {
   text-align: left;
 }
 .lm-profile-img {
-  width: 72px;
-  height: 72px;
-  border-radius: 999px;
-  object-fit: cover;
+  width: 75px;          /* Controls the size */
+  height: 75px;         /* Keeps it square */
+  border-radius: 50%;   /* Makes it a perfect circle */
+  object-fit: cover;    /* Crops instead of stretching */
   display: block;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
   border: 2px solid rgba(184, 154, 90, 0.9);
 }
 

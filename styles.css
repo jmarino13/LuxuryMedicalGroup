@@ -335,6 +335,15 @@ body {
 .lm-card-profile {
   text-align: left;
 }
+.lm-profile-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0.6rem;
+  border: 2px solid rgba(184, 154, 90, 0.9);
+}
 
 .lm-avatar-placeholder {
   display: inline-flex;

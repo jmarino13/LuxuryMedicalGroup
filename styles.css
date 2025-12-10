@@ -336,14 +336,16 @@ body {
   text-align: left;
 }
 .lm-profile-img {
-  width: 75px;          /* Controls the size */
-  height: 75px;         /* Keeps it square */
-  border-radius: 50%;   /* Makes it a perfect circle */
-  object-fit: cover;    /* Crops instead of stretching */
+  width: 110px;             /* Bigger size */
+  height: 110px;            /* Keep circle shape */
+  border-radius: 50%;       
+  object-fit: cover;        /* Proper crop */
+  object-position: center top;  /* Shows more of the face/body */
   display: block;
-  margin-bottom: 0.75rem;
-  border: 2px solid rgba(184, 154, 90, 0.9);
+  margin-bottom: 0.85rem;
+  border: 3px solid rgba(184, 154, 90, 0.95); /* Gold ring */
 }
+
 
 .lm-avatar-placeholder {
   display: inline-flex;

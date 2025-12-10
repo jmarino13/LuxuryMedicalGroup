@@ -336,6 +336,9 @@ body {
   text-align: left;
 }
 .lm-profile-img {
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.55);
+}
+
   width: 110px;             /* Bigger size */
   height: 110px;            /* Keep circle shape */
   border-radius: 50%;       

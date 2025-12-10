@@ -292,3 +292,758 @@
       background: radial-gradient(circle at 10% 0, rgba(255,255,255,0.18), transparent 60%),
                   linear-gradient(160deg, #1a1d24, #050608);
       padding: 1.5rem 1.4rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.06), transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .hero-card-headline {
+      margin-top: 0.35rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .hero-grid {
+      margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-grid-item {
+      padding: 0.75rem 0.8rem;
+      border-radius: var(--radius-md);
+      background: rgba(12,14,19,0.9);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .hero-grid-item strong {
+      font-size: 0.82rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    section {
+      margin-top: 3.25rem;
+    }
+
+    section h2 {
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    section h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .section-intro {
+      max-width: 40rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card-row {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.3rem;
+    }
+
+    .card {
+      border-radius: var(--radius-md);
+      background: var(--bg-alt);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 1.1rem 1.15rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+      font-size: 0.92rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.06), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+      pointer-events: none;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .card-title span.price-tag {
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+      font-weight: 500;
+    }
+
+    .card-sub {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.55rem;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 0.25rem;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.25rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-soft);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.7rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+    }
+
+    .layout-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+      margin-top: 1.4rem;
+    }
+
+    .pill-list {
+      margin-top: 0.3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .mini-pill {
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.25rem 0.6rem;
+    }
+
+    .faq-group {
+      margin-top: 1.3rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--bg-alt);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 0.9rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-card {
+      margin-top: 1.5rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-alt);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 1.2rem 1.3rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+    }
+
+    form {
+      display: grid;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      margin-bottom: 0.15rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.55rem 0.65rem;
+      border-radius: 9px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(10,10,12,0.9);
+      color: var(--text);
+      font: inherit;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #60636b;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .disclaimer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      padding-bottom: 1.6rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .warning {
+      color: var(--danger);
+      font-size: 0.75rem;
+      margin-top: 0.35rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 1.6rem 1.4rem;
+      }
+      .hero-right {
+        order: -1;
+      }
+      .layout-split {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-inline: 1rem;
+      }
+      .hero {
+        padding-inline: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <a href="#top" class="logo">
+          <img src="luxury-logo.png" alt="Luxury Medical Group logo">
+          <div class="logo-text">
+            <span>Luxury Medical Group</span>
+            <span>Concierge Wellness</span>
+          </div>
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#memberships">Memberships</a>
+        <a href="#about">About Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Request Consultation
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>New</span>
+          <span>Concierge GLP-1 & peptide care in Denver</span>
+        </div>
+        <h1>
+          Precision medicine, <span>luxury experience</span>.
+        </h1>
+        <p class="hero-sub">
+          <strong>Luxury Medical Group</strong> brings evidence-based GLP-1 weight management and advanced peptide therapies to Denver, Colorado—with a concierge model built around fewer patients, more access, and deeply personal care.
+        </p>
+        <div class="hero-meta">
+          <span>
+            <!-- calendar icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+            </svg>
+            Virtual & in-person concierge visits
+          </span>
+          <span>
+            <!-- star icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9"></polygon>
+            </svg>
+            GLP-1, peptide & lifestyle integration
+          </span>
+          <span>
+            <!-- map pin icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 22s7-6.2 7-12A7 7 0 0 0 5 10c0 5.8 7 12 7 12z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Based in Denver, Colorado
+          </span>
+        </div>
+
+        <div class="hero-cta-row">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Start your consultation
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+            View treatment options
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+        <p class="hero-note">
+          *All medications are prescribed only after a full clinical evaluation and are not guaranteed. Not all patients are candidates for GLP-1 or peptide therapies.
+        </p>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-card-title">Concierge Wellness Snapshot</div>
+        <div class="hero-card-headline">Tailored protocols, white-glove support.</div>
+
+        <div class="hero-grid">
+          <div class="hero-grid-item">
+            <strong>GLP-1 Weight Management</strong>
+            <div class="badge">Metabolic • Personalized</div>
+            <p class="hero-note">
+              Comprehensive intake, lab-guided dosing, and ongoing monitoring for sustainable change—not crash diets.
+            </p>
+          </div>
+          <div class="hero-grid-item">
+            <strong>Peptide Performance</strong>
+            <div class="badge">Recovery • Longevity</div>
+            <p class="hero-note">
+              Evidence-informed peptide stacks designed to support healing, vitality, sleep, and body composition.
+            </p>
+          </div>
+          <div class="hero-grid-item">
+            <strong>Concierge Access</strong>
+            <div class="badge">Message • Check-ins</div>
+            <p class="hero-note">
+              Direct messaging, streamlined refills, and touchpoints that fit your life—and your travel schedule.
+            </p>
+          </div>
+          <div class="hero-grid-item">
+            <strong>Whole-Person Lens</strong>
+            <div class="badge">Lifestyle • Mindset</div>
+            <p class="hero-note">
+              Nutrition, movement, sleep, and stress-reduction are built into every protocol we design together.
+            </p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Services</h2>
+      <h3>GLP-1 & Peptide Therapies with a Concierge Approach</h3>
+      <p class="section-intro">
+        Luxury Medical Group focuses on a limited number of patients, allowing for deep, ongoing relationships. We combine
+        thoughtfully used GLP-1 medications, peptide therapies, and lifestyle strategy to support sustainable weight
+        management, recovery, and performance.
+      </p>
+
+      <div class="card-row">
+        <article class="card">
+          <div class="card-title">
+            <span>GLP-1 Weight Management Programs</span>
+          </div>
+          <div class="card-sub">Metabolic reset • Clinical oversight</div>
+          <ul>
+            <li>Comprehensive medical intake, lab work, and risk screening.</li>
+            <li>GLP-1 medications prescribed only when clinically appropriate.</li>
+            <li>Ongoing titration, side-effect management, and lab monitoring.</li>
+            <li>Nutrition & habit coaching focused on long-term maintenance.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Individualized dosing</span>
+            <span class="chip">Metabolic labs</span>
+            <span class="chip">Accountability check-ins</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-title">
+            <span>Peptide Therapy Protocols</span>
+          </div>
+          <div class="card-sub">Recovery • Longevity • Performance</div>
+          <ul>
+            <li>Peptides selected based on your history, goals, and lab work.</li>
+            <li>Support for tissue repair, sleep, energy, and body composition.</li>
+            <li>Protocols re-evaluated regularly for safety and effectiveness.</li>
+            <li>Education on storage, self-administration, and best practices.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Tissue support</span>
+            <span class="chip">Inflammation modulation</span>
+            <span class="chip">Cellular health</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-title">
+            <span>Concierge Experience</span>
+          </div>
+          <div class="card-sub">Access • Trust • Consistency</div>
+          <ul>
+            <li>Virtual visits across Colorado, with select in-person options.</li>
+            <li>Priority scheduling and direct secure messaging.</li>
+            <li>Streamlined refills and proactive follow-ups.</li>
+            <li>Collaborative coordination with your existing providers.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Limited patient panel</span>
+            <span class="chip">Secure messaging</span>
+            <span class="chip">Telehealth-first</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIPS / PRICING STYLE -->
+    <section id="memberships">
+      <h2>Memberships</h2>
+      <h3>A calm, predictable way to invest in your health.</h3>
+      <p class="section-intro">
+        Luxury Medical Group is built around relationship, not rushed visits. Memberships keep access simple and
+        allow us to deliver a truly concierge experience. Medication and lab pricing may vary based on your protocol
+        and partner pharmacy.
+      </p>
+
+      <div class="card-row">
+        <article class="card">
+          <div class="card-title">
+            <span>Foundations Membership</span>
+            <span class="price-tag">Monthly rate • contact for details</span>
+          </div>
+          <div class="card-sub">Essentials • Access • Accountability</div>
+          <ul>
+            <li>Initial comprehensive consultation & care plan.</li>
+            <li>Quarterly follow-ups plus secure messaging access.</li>
+            <li>Lifestyle coaching integrated into every visit.</li>
+            <li>Medication & lab costs billed separately.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-title">
+            <span>GLP-1 Concierge Membership</span>
+            <span class="price-tag">Monthly rate • contact for details</span>
+          </div>
+          <div class="card-sub">Weight management • Close monitoring</div>
+          <ul>
+            <li>Includes Foundations benefits plus GLP-1 oversight.</li>
+            <li>More frequent virtual check-ins during titration phases.</li>
+            <li>Proactive side-effect support, nutrition guidance, and labs.</li>
+            <li>Access to select peptides when clinically appropriate.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-title">
+            <span>Performance & Longevity Membership</span>
+            <span class="price-tag">Custom protocol pricing</span>
+          </div>
+          <div class="card-sub">Peptide-forward • High-touch</div>
+          <ul>
+            <li>Customized peptide stacks for recovery, energy, and focus.</li>
+            <li>Deeper lab panels and performance tracking.</li>
+            <li>Priority access to your care team for questions and tweaks.</li>
+            <li>Designed for executives, entrepreneurs, and athletes.</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="warning">
+        Memberships are not a substitute for emergency care. For emergencies, call 911 or visit the nearest emergency room.
+      </p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="layout-split">
+        <div>
+          <h3>Meet the team behind Luxury Medical Group.</h3>
+          <p class="section-intro">
+            Luxury Medical Group was founded in Denver, Colorado by <strong>Chandler Phillips</strong> and
+            <strong>Nicole Reinhardt</strong> with one shared belief: modern wellness should feel both medically
+            rigorous and deeply human.
+          </p>
+          <p class="section-intro" style="margin-top:0.7rem;">
+            Rather than relying on quick fixes or one-size-fits-all protocols, the team partners with a curated network of
+            clinicians and compounding pharmacies to deliver thoughtful GLP-1 and peptide-based care that respects both the
+            science <em>and</em> the individual in front of them.
+          </p>
+          <div class="pill-list">
+            <span class="mini-pill">Denver-based</span>
+            <span class="mini-pill">Telehealth-enabled</span>
+            <span class="mini-pill">Concierge model</span>
+          </div>
+          <p class="section-intro" style="margin-top:0.7rem;">
+            While our permanent physical clinic space is being finalized in Denver, we currently support patients through
+            secure virtual visits and select in-person touchpoints. Every patient receives clear education, shared decision
+            making, and a long-term plan that goes beyond any single medication.
+          </p>
+        </div>
+        <div>
+          <article class="card">
+            <div class="card-title"><span>Chandler Phillips</span></div>
+            <div class="card-sub">Co-Founder • Concierge Wellness</div>
+            <p style="font-size:0.9rem; color:var(--muted); margin-top:0.35rem;">
+              Chandler brings a background in high-touch client experience and a passion for modern metabolic medicine. At
+              Luxury Medical Group, Chandler champions a calm, curated patient journey—from first inquiry through every
+              follow-up message—so each person feels known, heard, and supported.
+            </p>
+          </article>
+          <article class="card" style="margin-top:0.9rem;">
+            <div class="card-title"><span>Nicole Reinhardt</span></div>
+            <div class="card-sub">Co-Founder • Clinical Operations</div>
+            <p style="font-size:0.9rem; color:var(--muted); margin-top:0.35rem;">
+              Nicole focuses on the clinical operations and systems that keep your care safe, organized, and personalized.
+              From lab coordination to protocol tracking, Nicole’s work ensures that every plan we create is grounded in
+              data, safety, and the latest standards of care.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>FAQ</h2>
+      <h3>Answers to common questions.</h3>
+      <div class="faq-group">
+        <div class="faq-item">
+          <strong>Do you have a physical clinic location?</strong>
+          <p>
+            Luxury Medical Group is headquartered in Denver, Colorado. Our permanent clinic space is currently being
+            finalized. In the meantime, we serve patients across Colorado through secure telehealth visits and select
+            in-person touchpoints as available.
+          </p>
+        </div>
+        <div class="faq-item">
+          <strong>Are GLP-1 or peptide therapies guaranteed?</strong>
+          <p>
+            No. GLP-1 medications and peptide therapies are only prescribed when medically appropriate after a full
+            clinical evaluation. Some individuals will not be candidates, and results vary. All medications carry risks
+            and potential side effects, which will be reviewed with you before any decision is made.
+          </p>
+        </div>
+        <div class="faq-item">
+          <strong>Do you work with other providers?</strong>
+          <p>
+            Yes. With your permission, we can coordinate care and share relevant information with your primary care
+            clinician, specialist, or therapist to help keep your care aligned and cohesive.
+          </p>
+        </div>
+        <div class="faq-item">
+          <strong>Do you accept insurance?</strong>
+          <p>
+            At this time, Luxury Medical Group operates as a cash-pay concierge practice. We can provide documentation you
+            may submit to your insurance provider or HSA/FSA where applicable, but reimbursement is not guaranteed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <h3>Request a consultation.</h3>
+      <p class="section-intro">
+        Ready to explore whether GLP-1 or peptide-based care is right for you? Complete the brief form below and our team
+        will follow up with next steps and scheduling options.
+      </p>
+
+      <div class="contact-card">
+        <form>
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div>
+            <label for="phone">Mobile Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555">
+            <p class="disclaimer">
+              By providing your number, you agree that Luxury Medical Group may contact you by call or text regarding
+              services. Message &amp; data rates may apply. Message frequency may vary. You may opt out at any time.
+            </p>
+          </div>
+          <div>
+            <label for="state">Are you currently located in Colorado?</label>
+            <select id="state" name="state">
+              <option value="">Select an option</option>
+              <option value="yes">Yes, I live in Colorado</option>
+              <option value="no">No, I live elsewhere</option>
+            </select>
+          </div>
+          <div>
+            <label for="interest">What are you most interested in?</label>
+            <select id="interest" name="interest">
+              <option value="">Select an option</option>
+              <option value="glp1">GLP-1 weight management</option>
+              <option value="peptides">Peptide therapy</option>
+              <option value="both">Combination of both</option>
+              <option value="unsure">Not sure yet—need guidance</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Tell us a bit about your goals</label>
+            <textarea id="message" name="message" placeholder="Share your goals, history, or questions. Please do not include highly sensitive information here."></textarea>
+          </div>
+          <button type="submit" class="btn-primary">
+            Submit secure inquiry
+          </button>
+          <p class="disclaimer">
+            Submitting this form does not create a patient-provider relationship and should not be used for emergencies.
+            If you are experiencing a medical emergency, call 911 or go to the nearest emergency department.
+          </p>
+        </form>
+
+        <div>
+          <article class="card">
+            <div class="card-title"><span>Clinic details</span></div>
+            <ul>
+              <li><strong>Location:</strong> Denver, Colorado (permanent clinic address coming soon).</li>
+              <li><strong>Service area:</strong> Currently serving patients located in Colorado.</li>
+              <li><strong>Appointments:</strong> By appointment only via secure scheduling link.</li>
+              <li><strong>Email:</strong> <a href="mailto:info@luxurymedgroup.com">info@luxurymedgroup.com</a></li>
+            </ul>
+          </article>
+          <p class="disclaimer" style="margin-top:0.7rem;">
+            This website is for informational purposes only and does not provide medical advice. Always consult your
+            personal healthcare provider before starting or changing any treatment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Luxury Medical Group. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="hipaa.html">HIPAA Notice</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

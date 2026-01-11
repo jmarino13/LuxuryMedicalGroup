@@ -331,6 +331,68 @@ body {
 }
 
 /* Profiles */
+/* ===== Founder bio: consistent typography + collapse ===== */
+.bio-card .bio-text p{
+  margin: 0 0 14px 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--lm-muted);
+  font-weight: 400;
+}
+
+.bio-card .bio-text{
+  position: relative;
+  overflow: hidden;
+  max-height: 190px;
+  transition: max-height .25s ease;
+}
+
+.bio-card.expanded .bio-text{
+  max-height: 2000px;
+}
+
+.bio-card:not(.expanded) .bio-text::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 72px;
+  background: linear-gradient(
+    to bottom,
+    rgba(17,24,39,0),
+    rgba(17,24,39,1)
+  );
+  pointer-events:none;
+}
+
+.bio-toggle{
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(15, 23, 42, 0.65);
+  color: var(--lm-text);
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: transform 0.1s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.bio-toggle:hover{
+  border-color: rgba(184, 154, 90, 0.55);
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-1px);
+}
+
+.bio-toggle .arrow{
+  display:inline-block;
+  transition: transform .2s ease;
+}
+
+.bio-card.expanded .bio-toggle .arrow{
+  transform: rotate(180deg);
+}
 
 .lm-card-profile {
   text-align: left;

@@ -392,6 +392,16 @@
   hijackFormRedirect("heroForm");
   hijackFormRedirect("contactForm");
 </script>
+<script>
+  document.querySelectorAll(".bio-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".bio-card");
+      const expanded = card.classList.toggle("expanded");
+      btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+      btn.firstChild.textContent = expanded ? "Read less " : "Read more ";
+    });
+  });
+</script>
 
 </body>
 </html>

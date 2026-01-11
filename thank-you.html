@@ -1,49 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Thank You | Luxury Medical Group</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Thank you for joining the Luxury Medical Group waitlist. Our team will reach out with next steps." />
+
+  <!-- If your site uses styles.css, keep this for consistent fonts + colors -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Small page-specific styling to match the luxury hero look -->
   <style>
-    body {
-      background: #0b1320;
-      color: #efe6db;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+    :root{
+      --bg:#070b13;
+      --panel:#0f1624;
+      --panel2:#0b1220;
+      --text:#f4f6fb;
+      --muted:rgba(244,246,251,.74);
+      --line:rgba(244,246,251,.12);
+      --gold:#c9a85b;
+      --gold2:rgba(201,168,91,.35);
+      --shadow:0 30px 90px rgba(0,0,0,.55);
+      --radius:22px;
+      --container:1120px;
     }
-    .box {
-      max-width: 520px;
-      padding: 3rem;
-      border-radius: 20px;
-      background: radial-gradient(circle at top, #1a2332, #0b1320);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(201,168,91,.14), transparent 55%),
+        radial-gradient(1000px 680px at 70% 10%, rgba(120,160,210,.12), transparent 55%),
+        linear-gradient(180deg, #070b13 0%, #060912 100%);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
     }
-    h1 {
-      margin-bottom: 1rem;
+    a{color:inherit}
+    .lm-container{
+      width:min(var(--container), calc(100% - 40px));
+      margin:0 auto;
     }
-    p {
-      color: rgba(239,230,219,0.85);
+
+    /* Header matches your site structure */
+    .lm-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,11,19,.72);
+      border-bottom:1px solid var(--line);
     }
-    a {
-      display: inline-block;
-      margin-top: 2rem;
-      color: #c9a85b;
-      text-decoration: none;
-      font-weight: 600;
+    .lm-header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .lm-logo-group{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+    }
+    .lm-logo-img{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      object-fit:contain;
+      background: rgba(255,255,255,.02);
+      border:1px solid rgba(201,168,91,.22);
+      box-shadow: 0 0 0 6px rgba(201,168,91,.06);
+    }
+    .lm-logo-text{
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:14px;
+      opacity:.95;
+      white-space:nowrap;
+    }
+    .lm-nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      opacity:.9;
+    }
+    .lm-nav a{
+      text-decoration:none;
+      font-size:14px;
+      color: rgba(244,246,251,.82);
+    }
+    .lm-nav a:hover{color:var(--text)}
+    .lm-nav-cta{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(201,168,91,.35);
+      background: rgba(201,168,91,.08);
+      box-shadow: 0 0 0 6px rgba(201,168,91,.06);
+      color: var(--text);
+    }
+    .lm-nav-cta:hover{
+      background: rgba(201,168,91,.14);
+      border-color: rgba(201,168,91,.55);
+    }
+
+    /* Main */
+    .wrap{
+      min-height: calc(100vh - 72px);
+      display:flex;
+      align-items:center;
+      padding:56px 0 70px;
+    }
+    .card{
+      width:100%;
+      max-width:860px;
+      margin:0 auto;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(800px 280px at 20% 0%, rgba(201,168,91,.12), transparent 60%),
+        radial-gradient(900px 380px at 80% 10%, rgba(120,160,210,.10), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(244,246,251,.10);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-inner{
+      padding:44px 42px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    /* Left content */
+    h1{
+      margin:0 0 10px 0;
+      font-size: clamp(30px, 3.2vw, 44px);
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+    .lead{
+      margin:0 0 22px 0;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.6;
+    }
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:18px 0 0;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(244,246,251,.12);
+      background: rgba(15,22,36,.55);
+      color: rgba(244,246,251,.86);
+      font-size:13px;
+      letter-spacing:.01em;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(201,168,91,.14);
+    }
+
+    /* Right panel */
+    .side{
+      border-radius: 18px;
+      padding:22px;
+      background: rgba(11,18,32,.58);
+      border:1px solid rgba(244,246,251,.10);
+    }
+    .side h2{
+      margin:0 0 10px 0;
+      font-size:18px;
+      letter-spacing:.01em;
+    }
+    .side p{
+      margin:0 0 14px 0;
+      color: rgba(244,246,251,.76);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .btnrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.01em;
+      font-size:14px;
+      border:1px solid transparent;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn-primary{
+      background: linear-gradient(180deg, rgba(201,168,91,.96), rgba(201,168,91,.84));
+      color:#0b1220;
+      box-shadow: 0 18px 50px rgba(201,168,91,.20);
+    }
+    .btn-primary:hover{
+      filter: brightness(1.03);
+      box-shadow: 0 22px 60px rgba(201,168,91,.26);
+    }
+    .btn-ghost{
+      background: rgba(255,255,255,.02);
+      border-color: rgba(244,246,251,.14);
+      color: rgba(244,246,251,.9);
+    }
+    .btn-ghost:hover{
+      background: rgba(255,255,255,.04);
+      border-color: rgba(244,246,251,.22);
+    }
+
+    /* Footer */
+    .lm-footer{
+      border-top:1px solid rgba(244,246,251,.10);
+      color: rgba(244,246,251,.70);
+      font-size:12.5px;
+      padding:22px 0 26px;
+      background: rgba(7,11,19,.55);
+    }
+    .lm-footer-inner{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .lm-footer-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .lm-footer a{
+      text-decoration:none;
+      color: rgba(244,246,251,.75);
+    }
+    .lm-footer a:hover{color: var(--text)}
+
+    @media (max-width: 860px){
+      .card-inner{grid-template-columns:1fr; padding:34px 24px}
+      .lm-nav{display:none}
+      .wrap{padding:34px 0 50px}
     }
   </style>
 </head>
+
 <body>
-  <div class="box">
-    <h1>Thank You</h1>
-    <p>Your information has been received.</p>
-    <p>Our team at Luxury Medical Group will be in touch shortly.</p>
-    <a href="/">Return to homepage</a>
-  </div>
+  <!-- Header -->
+  <header class="lm-header">
+    <div class="lm-container lm-header-inner">
+      <a href="index.html" class="lm-logo-group" aria-label="Luxury Medical Group Home">
+        <img src="images/luxury-logo.png" alt="Luxury Medical Group Logo" class="lm-logo-img" />
+        <span class="lm-logo-text">Luxury Medical Group</span>
+      </a>
+      <nav class="lm-nav" aria-label="Primary navigation">
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#founders">Founders</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact" class="lm-nav-cta">Join the Waitlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="wrap">
+    <div class="lm-container">
+      <section class="card" role="region" aria-label="Thank you confirmation">
+        <div class="card-inner">
+          <div>
+            <h1>Thank you — you’re on the waitlist.</h1>
+            <p class="lead">
+              We’ve received your request. A member of the Luxury Medical Group team will reach out soon
+              with next steps for concierge GLP-1 or peptide therapy.
+            </p>
+
+            <div class="pillrow" aria-label="What happens next">
+              <span class="pill"><span class="dot"></span> Review your intake</span>
+              <span class="pill"><span class="dot"></span> Confirm eligibility</span>
+              <span class="pill"><span class="dot"></span> Schedule next steps</span>
+            </div>
+          </div>
+
+          <aside class="side" aria-label="Next steps panel">
+            <h2>What to expect</h2>
+            <p>
+              If you don’t see an email within 24 hours, please check spam/junk.
+              You can also submit a second request from the homepage.
+            </p>
+            <p style="margin-bottom:0;">
+              For emergencies, call 911 or go to the nearest emergency room.
+              Luxury Medical Group does not provide emergency medical services.
+            </p>
+
+            <div class="btnrow">
+              <a class="btn btn-primary" href="index.html">Return to Homepage</a>
+              <a class="btn btn-ghost" href="index.html#contact">Submit Another Request</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="lm-footer">
+    <div class="lm-container lm-footer-inner">
+      <p>&copy; <span id="year"></span> Luxury Medical Group. All rights reserved.</p>
+      <div class="lm-footer-links">
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="hipaa.html">HIPAA Notice</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

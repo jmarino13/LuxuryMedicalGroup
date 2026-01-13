@@ -601,42 +601,38 @@ a:hover {
   .lm-hero-card {
     padding: 1.4rem 1.25rem 1.25rem;
   }
- /* =========================
-   Leadership Grid (3-up)
+/* =========================
+   Medical Leadership Grid (3-up)
    ========================= */
 
 .lm-section-spacer { height: 28px; }
 
 .leadership-grid{
   margin-top: 10px;
-  gap: 28px;
   text-align: center;
+  gap: 1.5rem; /* matches your lm-grid gap */
 }
 
 .leader-card{
-  padding: 18px 12px;
+  background: var(--lm-surface-soft);
+  border-radius: var(--lm-radius);
+  border: 1px solid rgba(15, 23, 42, 0.95);
+  padding: 1.4rem 1.4rem 1.3rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.leader-card h3{
-  margin: 14px 0 6px;
-  font-size: 1.05rem;
-  color: var(--lm-text);
-}
-
-.leader-card .lm-profile-role{
-  margin: 0;
-}
-
-/* Bulletproof circular headshot */
 .leader-photo-wrap{
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid rgba(184, 154, 90, 0.95); /* same gold ring as founders */
-  background: rgba(15, 23, 42, 0.9);
-  box-shadow: 0 0 12px rgba(184, 154, 90, 0.55);
+  border: 3px solid rgba(184,154,90,0.95);
+  box-shadow: 0 0 12px rgba(184,154,90,0.55);
+  background: rgba(15,23,42,0.9);
+  margin: 0 auto 0.85rem;
 }
 
 .leader-photo-wrap img{
@@ -647,55 +643,11 @@ a:hover {
   display: block;
 }
 
-/* Responsive: stack nicely on smaller screens */
+/* Stack nicely on smaller screens */
 @media (max-width: 900px){
   .lm-grid-3.leadership-grid{
     grid-template-columns: 1fr;
   }
-  .leader-photo-wrap{
-    width: 110px;
-    height: 110px;
-  }
-}
-/* FORCE leadership images to behave (override everything) */
-.lm-grid.leadership-grid .leader-photo-wrap{
-  width: 110px !important;
-  height: 110px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  border: 3px solid rgba(184,154,90,0.95) !important;
-  box-shadow: 0 0 12px rgba(184,154,90,0.55) !important;
-  background: rgba(15,23,42,0.9) !important;
-  margin: 0 auto 0.85rem !important;
-}
-
-.lm-grid.leadership-grid .leader-photo-wrap img{
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  display: block !important;
-}
-
-/* HARD OVERRIDE: Leadership photos must be circles, not giant images */
-.leadership-grid .leader-photo-wrap{
-  width: 110px !important;
-  height: 110px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  border: 3px solid rgba(184,154,90,0.95) !important;
-  box-shadow: 0 0 12px rgba(184,154,90,0.55) !important;
-  background: rgba(15,23,42,0.9) !important;
-  margin: 0 auto 0.85rem !important;
-}
-
-.leadership-grid .leader-photo-wrap img{
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  display: block !important;
-  max-width: 100% !important;
 }
 
 }

@@ -657,6 +657,25 @@ a:hover {
     height: 110px;
   }
 }
+/* FORCE leadership images to behave (override everything) */
+.lm-grid.leadership-grid .leader-photo-wrap{
+  width: 110px !important;
+  height: 110px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 3px solid rgba(184,154,90,0.95) !important;
+  box-shadow: 0 0 12px rgba(184,154,90,0.55) !important;
+  background: rgba(15,23,42,0.9) !important;
+  margin: 0 auto 0.85rem !important;
+}
+
+.lm-grid.leadership-grid .leader-photo-wrap img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+}
 
 
 }

@@ -768,5 +768,26 @@ a:hover {
     margin: 0 0 0.85rem 0 !important;
   }
 }
+/* ===== FINAL OVERRIDE: leadership photos LEFT on mobile ===== */
+
+/* If doctor uses the wrapper, this is what's centering it (margin:auto) */
+@media (max-width: 900px){
+  .leadership-row .leader-photo-wrap{
+    margin: 0 0 0.85rem 0 !important;   /* remove auto-centering */
+  }
+
+  /* If doctor uses lm-profile-img directly, force left too */
+  .leadership-row .lm-profile-img{
+    margin: 0 0 0.85rem 0 !important;
+  }
+
+  /* Prevent any card from centering children */
+  .leadership-row .lm-card,
+  .leadership-row .lm-card-profile{
+    align-items: flex-start !important;
+    text-align: left !important;
+    justify-items: start !important;
+  }
+}
 
 }

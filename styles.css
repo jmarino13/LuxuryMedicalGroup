@@ -601,4 +601,54 @@ a:hover {
   .lm-hero-card {
     padding: 1.4rem 1.25rem 1.25rem;
   }
+  /* Leadership Section */
+.leadership h2{
+  margin: 0 0 14px;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+
+.leader-grid{
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.leader-photo{
+  width: 100%;
+  max-width: 180px;
+  border-radius: 16px;
+  border: 1px solid var(--lmg-border);
+  background: #fff;
+}
+
+.leader-bio h3{
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.leader-title{
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.leader-bio p{
+  font-size: 14px;
+  line-height: 1.45;
+  opacity: 0.95;
+  margin: 0 0 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .leader-grid{
+    grid-template-columns: 1fr;
+  }
+  .leader-photo{
+    max-width: 140px;
+  }
+}
+
 }

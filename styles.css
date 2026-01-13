@@ -692,5 +692,25 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+/* Make the leadership row uniform */
+.leadership-row .lm-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.leadership-row .lm-profile-img{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* If Dr Pic has a white “photo border”, zoom/crop it a bit */
+.leadership-row .doctor-card .lm-profile-img{
+  transform: scale(1.12);
+}
 
 }

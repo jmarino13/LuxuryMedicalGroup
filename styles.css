@@ -724,5 +724,15 @@ a:hover {
     align-items: flex-start !important;
   }
 }
+/* Make all leadership cards same behavior + align Read more at bottom */
+.leadership-row .bio-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.leadership-row .bio-toggle{
+  margin-top: auto; /* pushes button to bottom */
+}
 
 }

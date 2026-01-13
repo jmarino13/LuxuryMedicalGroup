@@ -734,5 +734,17 @@ a:hover {
 .leadership-row .bio-toggle{
   margin-top: auto; /* pushes button to bottom */
 }
+/* Force left alignment for doctor photo (especially on mobile) */
+.doctor-card .lm-profile-img{
+  margin: 0 0 0.85rem 0 !important; /* NOT centered */
+}
+
+/* Ensure cards don't center contents on mobile */
+@media (max-width: 900px){
+  .leadership-row .lm-card{
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+}
 
 }

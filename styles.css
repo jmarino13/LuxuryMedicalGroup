@@ -616,13 +616,14 @@ a:hover {
 }
 
 .leader-photo{
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--lmg-gold);
   background: #fff;
 }
+
 
 }
 

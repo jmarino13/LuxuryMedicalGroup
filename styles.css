@@ -788,6 +788,50 @@ a:hover {
     text-align: left !important;
     justify-items: start !important;
   }
+  /* Leadership headshots: wrapper controls the circle */
+.leadership-row .leader-photo-wrap{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(184,154,90,.95);
+  box-shadow: 0 0 12px rgba(184,154,90,.55);
+  background: rgba(15,23,42,.9);
+  margin: 0 0 .85rem 0; /* LEFT aligned */
+}
+
+/* Make the image fill the wrapper cleanly */
+.leadership-row .leader-photo-wrap img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none;
+}
+
+/* Zoom Dr. Nat only to crop out the white border */
+.leadership-row .leader-photo-wrap img.doctor-img{
+  transform: scale(1.24);
+  transform-origin: 50% 35%;
+  object-position: 50% 20%;
+}
+
+/* Mobile: force left alignment (kills centering) */
+@media (max-width: 900px){
+  .leadership-row .lm-card{
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .leadership-row .leader-photo-wrap{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 }
 
 }

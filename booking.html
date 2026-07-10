@@ -72,20 +72,67 @@ Your local timezone:
 `;
 
 
-fetch("/api/booking")
+
+fetch("https://luxury-booking-api.vercel.app/api/booking")
+
 .then(response => response.json())
+
 .then(data => {
 
 
-document.getElementById("booking").innerHTML =
-`
+const categories =
+data.data.createCart.cart.availableCategories;
 
-<pre>
-${JSON.stringify(data,null,2)}
-</pre>
+
+let html = "";
+
+
+categories.forEach(category => {
+
+
+html += `<h3>${category.name}</h3>`;
+
+
+category.availableItems.forEach(item => {
+
+
+html += `
+
+<div style="
+margin:20px;
+padding:20px;
+border:1px solid #b89a5a;
+border-radius:15px;
+">
+
+<h2>${item.name}</h2>
+
+<button>
+Book This Consultation
+</button>
+
+</div>
 
 `;
 
+});
+
+
+});
+
+
+document.getElementById("booking").innerHTML = html;
+
+
+})
+
+
+.catch(error => {
+
+console.error(error);
+
+document.getElementById("booking").innerHTML =
+"Unable to load booking options.";
 
 });
 

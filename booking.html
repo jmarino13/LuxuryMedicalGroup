@@ -129,10 +129,13 @@ document.getElementById("booking").innerHTML = html;
 
 .catch(error => {
 
-console.error(error);
+console.error("BOULEVARD ERROR:", error);
 
 document.getElementById("booking").innerHTML =
-"Unable to load booking options.";
+`
+<h3>Booking Error</h3>
+<pre>${error}</pre>
+`;
 
 });
 

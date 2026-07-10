@@ -93,32 +93,39 @@ categories.forEach(category => {
 html += `<h3>${category.name}</h3>`;
 
 
-category.availableItems
-.filter(item => item.id !== "GIFT_CARD")
-.forEach(item => {
-
+category.availableItems.forEach(item => {
 
 html += `
 
 <div style="
 margin:20px;
-padding:20px;
+padding:30px;
 border:1px solid #b89a5a;
 border-radius:15px;
 ">
 
 <h2>${item.name}</h2>
 
-<button onclick="selectService('${item.id}')">
+<p>
+Ready to schedule your consultation?
+</p>
+
+<button 
+onclick="bookService('${item.id}')"
+style="
+background:#b89a5a;
+border:none;
+padding:15px 30px;
+border-radius:25px;
+font-size:18px;
+cursor:pointer;
+">
 Book This Consultation
 </button>
 
 </div>
 
 `;
-
-});
-
 
 });
 

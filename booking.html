@@ -72,12 +72,22 @@ Your local timezone:
 `;
 
 
+fetch("/api/booking")
+.then(response => response.json())
+.then(data => {
+
+
 document.getElementById("booking").innerHTML =
 `
-We detected your timezone automatically.
-<br><br>
-Next we will load available appointments.
+
+<pre>
+${JSON.stringify(data,null,2)}
+</pre>
+
 `;
+
+
+});
 
 
 </script>

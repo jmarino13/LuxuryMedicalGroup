@@ -137,6 +137,25 @@ document.getElementById("booking").innerHTML =
 });
 
 
+function selectService(serviceId){
+
+console.log("Selected Service:", serviceId);
+
+
+document.getElementById("booking").innerHTML =
+
+`
+<h2>Loading available appointments...</h2>
+
+<p>
+Service:
+${serviceId}
+</p>
+
+`;
+
+}
+
 </script>
 
 

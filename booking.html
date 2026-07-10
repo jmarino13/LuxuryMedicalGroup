@@ -93,7 +93,9 @@ categories.forEach(category => {
 html += `<h3>${category.name}</h3>`;
 
 
-category.availableItems.forEach(item => {
+category.availableItems
+.filter(item => item.id !== "GIFT_CARD")
+.forEach(item => {
 
 
 html += `

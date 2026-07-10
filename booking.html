@@ -1,33 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Luxury Medical Group Booking</title>
-
-<style>
-body {
-    background:#020617;
-    color:white;
-    font-family:Arial, sans-serif;
-    text-align:center;
-    padding:50px;
-}
-
-h1 {
-    color:#b89a5a;
-}
-</style>
-
-</head>
-
 <body>
 
 <h1>Luxury Medical Group</h1>
 
 <h2>Book Your Free Peptide Consultation</h2>
 
-<p>
-Your personalized booking experience is loading...
+<p id="timezone">
+Checking your location...
 </p>
 
+<div id="booking">
+Loading available appointments...
+</div>
+
+
+<script>
+
+const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+document.getElementById("timezone").innerHTML =
+`
+Your local timezone:
+<strong>${timezone}</strong>
+`;
+
+</script>
+
+
 </body>
-</html>

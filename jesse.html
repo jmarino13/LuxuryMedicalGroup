@@ -915,23 +915,39 @@ function toggleSound() {
     button.innerHTML = "🔊 Turn Sound On";
   }
 }
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+ <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Optional: capture URL tracking parameters into hidden fields if available.
-    const params = new URLSearchParams(window.location.search);
-    const form = document.querySelector("form");
+  const params = new URLSearchParams(window.location.search);
+  const form = document.querySelector("form");
 
-    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
-      const value = params.get(key);
-      if (value && form) {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = value;
-        form.appendChild(input);
-      }
-    });
-  </script>
-</body>
+  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
+    const value = params.get(key);
+
+    if (value && form) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    }
+  });
+
+
+  function toggleSound() {
+    const video = document.getElementById("jesseVideo");
+    const button = document.querySelector(".sound-button");
+
+    if (!video) return;
+
+    if (video.muted) {
+      video.muted = false;
+      video.volume = 1;
+      button.innerHTML = "🔇 Turn Sound Off";
+    } else {
+      video.muted = true;
+      button.innerHTML = "🔊 Turn Sound On";
+    }
+  }
+</script></body>
 </html>

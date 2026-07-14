@@ -486,7 +486,24 @@
       }
     }
     .video-trust-section {
-  background:
+ .video-wrapper {
+  position: relative;
+}
+
+.sound-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #c7a45d, #efe4ca);
+  color: #111;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 5;
+}
+      background:
     linear-gradient(180deg, #050505 0%, #111111 50%, #050505 100%);
 }
 
@@ -580,42 +597,8 @@
 </nav>
 </header>
 
-<section class="section video-trust-section">
-<div class="container video-trust-grid">
 
-    <div class="video-showcase">
-   <video autoplay muted loop playsinline preload="auto" poster="assets/jesse-hero.jpg">
-        <source src="assets/jesse-video.mp4" type="video/mp4" />
-        Your browser does not support video playback.
-      </video>
-    </div>
-
-    <div class="video-trust-copy">
-      <div class="eyebrow">Jesse’s Wellness Pick</div>
-
-      <h2>A more personal approach to wellness.</h2>
-
-      <div class="stars">★★★★★</div>
-
-      <p>
-        Luxury Medical Group delivers provider-guided wellness programs with the privacy,
-        support, and attention expected from a concierge medical experience.
-      </p>
-
-      <div class="trust-pills">
-        <span>Personalized Wellness</span>
-        <span>GLP-1 Programs</span>
-        <span>Peptide Therapy</span>
-        <span>Concierge Experience</span>
-      </div>
-
-      <a class="btn" href="#consult">Request Consultation</a>
-    </div>
-
-  </div>
-</section>
-    </nav>
-  </header>
+   
 
   <main>
     <section class="hero">
@@ -696,9 +679,17 @@
     <section class="section video-trust-section">
       <div class="container video-trust-grid">
         <div class="video-showcase">
-          <video autoplay muted loop playsinline preload="auto" poster="assets/jesse-hero.jpg">
-            <source src="assets/jesse-video.mp4" type="video/mp4" />
-          </video>
+          <div class="video-wrapper">
+
+<video id="jesseVideo" autoplay muted loop playsinline preload="auto" poster="assets/jesse-hero.jpg">
+    <source src="assets/jesse-video.mp4" type="video/mp4" />
+</video>
+
+<button class="sound-button" onclick="toggleSound()">
+🔊 Turn Sound On
+</button>
+
+</div>
         </div>
         <div class="video-trust-copy">
           <div class="eyebrow">Jesse’s Wellness Pick</div>
@@ -912,7 +903,18 @@
       </div>
     </div>
   </footer>
+function toggleSound() {
+  const video = document.getElementById("jesseVideo");
+  const button = document.querySelector(".sound-button");
 
+  if (video.muted) {
+    video.muted = false;
+    button.innerHTML = "🔇 Turn Sound Off";
+  } else {
+    video.muted = true;
+    button.innerHTML = "🔊 Turn Sound On";
+  }
+}
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 

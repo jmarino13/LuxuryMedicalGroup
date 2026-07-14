@@ -485,6 +485,74 @@
         padding-top: 54px;
       }
     }
+    .video-trust-section {
+  background:
+    linear-gradient(180deg, #050505 0%, #111111 50%, #050505 100%);
+}
+
+.video-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  align-items: center;
+}
+
+.video-showcase {
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(199,164,93,.3);
+  box-shadow: 0 24px 70px rgba(0,0,0,.45);
+}
+
+.video-showcase video {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.video-trust-copy h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.04;
+  margin-bottom: 18px;
+}
+
+.video-trust-copy p {
+  color: #d8d1c4;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 22px;
+  letter-spacing: .18em;
+  margin-bottom: 18px;
+}
+
+.trust-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.trust-pills span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(199,164,93,.28);
+  background: rgba(255,255,255,.04);
+  color: var(--champagne);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .video-trust-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
@@ -504,6 +572,40 @@
 
       <div class="nav-links">
         <a href="#programs">Programs</a>
+        <section class="section video-trust-section">
+  <div class="container video-trust-grid">
+
+    <div class="video-showcase">
+      <video autoplay muted loop playsinline controls poster="assets/jesse-hero.jpg">
+        <source src="assets/jesse-video.mp4" type="video/mp4" />
+        Your browser does not support video playback.
+      </video>
+    </div>
+
+    <div class="video-trust-copy">
+      <div class="eyebrow">Jesse’s Wellness Pick</div>
+
+      <h2>A more personal approach to wellness.</h2>
+
+      <div class="stars">★★★★★</div>
+
+      <p>
+        Luxury Medical Group delivers provider-guided wellness programs with the privacy,
+        support, and attention expected from a concierge medical experience.
+      </p>
+
+      <div class="trust-pills">
+        <span>Personalized Wellness</span>
+        <span>GLP-1 Programs</span>
+        <span>Peptide Therapy</span>
+        <span>Concierge Experience</span>
+      </div>
+
+      <a class="btn" href="#consult">Request Consultation</a>
+    </div>
+
+  </div>
+</section>
         <a href="#why">Why Luxury</a>
         <a href="#consult">Get Started</a>
         <a class="btn" href="#consult">Book Consultation</a>
@@ -596,10 +698,43 @@
 
     <section class="section" id="why">
       <div class="container split">
-        <div class="media-card">
-          <!-- Replace with Jesse-approved lifestyle image, clinic image, or short reel thumbnail -->
-          <img src="assets/jesse-lifestyle.jpg" alt="Luxury Medical Group concierge wellness lifestyle" />
-        </div>
+       <div class="feature-spotlight">
+  <div class="feature-badge">Jesse’s Wellness Pick</div>
+
+  <div class="feature-stat">
+    <span>01</span>
+    <div>
+      <strong>Personalized Wellness</strong>
+      <p>Programs tailored to your goals, lifestyle, and medical eligibility.</p>
+    </div>
+  </div>
+
+  <div class="feature-stat">
+    <span>02</span>
+    <div>
+      <strong>GLP-1 Programs</strong>
+      <p>Provider-guided weight management with ongoing support.</p>
+    </div>
+  </div>
+
+  <div class="feature-stat">
+    <span>03</span>
+    <div>
+      <strong>Peptide Therapy</strong>
+      <p>Wellness options focused on recovery, performance, and longevity.</p>
+    </div>
+  </div>
+
+  <div class="feature-stat">
+    <span>04</span>
+    <div>
+      <strong>Concierge Experience</strong>
+      <p>A premium, high-touch process from consultation through follow-up.</p>
+    </div>
+  </div>
+
+  <a class="btn" href="#consult">Request Consultation</a>
+</div>
 
         <div class="panel">
           <div class="eyebrow">Why Luxury Medical Group</div>
@@ -620,6 +755,58 @@
           </p>
         </div>
       </div>
+      .feature-spotlight {
+  border: 1px solid rgba(199, 164, 93, 0.3);
+  border-radius: 30px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at top right, rgba(199,164,93,.18), transparent 35%),
+    linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+.feature-badge {
+  display: inline-block;
+  margin-bottom: 26px;
+  padding: 8px 14px;
+  border: 1px solid rgba(199,164,93,.4);
+  border-radius: 999px;
+  color: var(--champagne);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.feature-stat {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(199,164,93,.18);
+}
+
+.feature-stat:last-of-type {
+  margin-bottom: 24px;
+}
+
+.feature-stat span {
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.feature-stat strong {
+  display: block;
+  color: var(--champagne);
+  font-size: 19px;
+  margin-bottom: 4px;
+}
+
+.feature-stat p {
+  color: var(--muted);
+  font-size: 14px;
+}
     </section>
 
     <section class="section form-section" id="consult">

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fit Responder’s Wellness Pick | Luxury Medical Group</title>
+  <meta name="description" content="Fit Responder’s Wellness Pick with Luxury Medical Group — concierge GLP-1, peptide, and wellness programs designed to help you look, feel, and perform your best." />
+
+  <style>
+    :root {
+      --black: #050505;
+      --charcoal: #111111;
+      --soft-black: #1a1a1a;
+      --gold: #c7a45d;
+      --champagne: #efe4ca;
+      --cream: #f8f4ec;
+      --white: #ffffff;
+      --muted: #b8b8b8;
+      --border: rgba(199, 164, 93, 0.35);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    .announcement {
+      background: linear-gradient(90deg, var(--gold), var(--champagne), var(--gold));
+      color: #111;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      font-size: 13px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5,5,5,.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(199,164,93,.2);
+    }
+
+    .nav {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 58px;
+      height: auto;
+    }
+
+    .brand-text {
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--champagne));
+      color: #111;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 12px 30px rgba(199,164,93,.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(199,164,93,.35);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--champagne);
+      box-shadow: none;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(199,164,93,.25), transparent 35%),
+        linear-gradient(135deg, #050505 0%, #121212 48%, #000 100%);
+    }
+
+    .hero-inner {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 82px 0 72px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .22em;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: .95;
+      letter-spacing: -0.045em;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-copy {
+      font-size: 19px;
+      color: #e7e0d3;
+      max-width: 640px;
+      margin-bottom: 30px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid rgba(199,164,93,.25);
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 680px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .trust-item {
+      padding: 16px;
+      border-right: 1px solid rgba(199,164,93,.18);
+    }
+
+    .trust-item:last-child {
+      border-right: none;
+    }
+
+    .trust-item strong {
+      color: var(--champagne);
+      display: block;
+      font-size: 18px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .media-card {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+    }
+
+    .media-card::before {
+      content: "Fit Responder’s Wellness Pick";
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      background: rgba(0,0,0,.72);
+      color: var(--champagne);
+      border: 1px solid rgba(199,164,93,.45);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+    }
+
+    .media-card img, .media-card video {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .section {
+      padding: 78px 0;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      max-width: 800px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.04;
+      margin-bottom: 14px;
+    }
+
+    .section-title p {
+      color: #d8d1c4;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+      border: 1px solid rgba(199,164,93,.25);
+      border-radius: 26px;
+      padding: 28px;
+      min-height: 260px;
+    }
+
+    .card .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(199,164,93,.16);
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--champagne);
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .panel {
+      border: 1px solid rgba(199,164,93,.25);
+      border-radius: 30px;
+      padding: 34px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .panel ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .panel li {
+      display: flex;
+      gap: 12px;
+      color: #dfd8cc;
+    }
+
+    .panel li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .form-section {
+      background:
+        radial-gradient(circle at bottom left, rgba(199,164,93,.18), transparent 36%),
+        linear-gradient(180deg, #111 0%, #050505 100%);
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    form {
+      background: var(--cream);
+      color: #111;
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    form h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    form p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #ddd1bd;
+      border-radius: 14px;
+      padding: 14px 15px;
+      font: inherit;
+      background: #fff;
+      color: #111;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .fine-print {
+      font-size: 12px;
+      color: #666;
+      margin-top: 14px;
+    }
+
+    .disclaimer {
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid rgba(199,164,93,.22);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(199,164,93,.22);
+      padding: 34px 0;
+      background: #030303;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--champagne);
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .split,
+      .form-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-row {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(199,164,93,.18);
+      }
+
+      .trust-item:last-child {
+        border-bottom: none;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-inner {
+        padding-top: 54px;
+      }
+    }
+    .video-trust-section {
+ .video-wrapper {
+  position: relative;
+}
+
+.sound-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #c7a45d, #efe4ca);
+  color: #111;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 5;
+}
+      background:
+    linear-gradient(180deg, #050505 0%, #111111 50%, #050505 100%);
+}
+
+.video-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  align-items: center;
+}
+
+.video-showcase {
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(199,164,93,.3);
+  box-shadow: 0 24px 70px rgba(0,0,0,.45);
+}
+
+.video-showcase video {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.video-trust-copy h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.04;
+  margin-bottom: 18px;
+}
+
+.video-trust-copy p {
+  color: #d8d1c4;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 22px;
+  letter-spacing: .18em;
+  margin-bottom: 18px;
+}
+
+.trust-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.trust-pills span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(199,164,93,.28);
+  background: rgba(255,255,255,.04);
+  color: var(--champagne);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .video-trust-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="announcement">Exclusive influencer partner page for Fit Responder followers</div>
+
+  <header>
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Luxury Medical Group Home">
+        <!-- Replace with your actual logo file path, for example: assets/luxury-logo.PNG -->
+        <img src="assets/luxury-logo.PNG" alt="Luxury Medical Group Logo" />
+        <div class="brand-text">
+          <strong>Luxury Medical Group</strong>
+          <span>Concierge Wellness</span>
+        </div>
+      </a>
+
+    <div class="nav-links">
+    <a href="#programs">Programs</a>
+    <a href="#why">Why Luxury</a>
+    <a
+      class="btn"
+      href="/booking.html?source=fit-responder&utm_source=fit-responder&utm_medium=influencer&utm_campaign=fit_responder_wellness"
+    >
+      Book Now
+    </a>
+</div>
+
+</nav>
+</header>
+
+
+   
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Luxury Medical Group x Fit Responder</div>
+          <h1>Fit Responder’s <span>Wellness Pick</span></h1>
+          <p class="hero-copy">
+            A concierge approach to looking, feeling, and performing your best. Luxury Medical Group offers personalized GLP-1, peptide, and wellness programs guided by medical providers and designed around your goals.
+          </p>
+
+          <div class="cta-row">
+            <a
+  class="btn"
+  href="/booking.html?source=fit-responder&utm_source=fit-responder&utm_medium=influencer&utm_campaign=fit_responder_wellness"
+>
+  Book Your Free Consultation
+</a>
+            <a class="btn secondary" href="#programs">Explore Programs</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <strong>Concierge</strong>
+              <span>Personalized support</span>
+            </div>
+            <div class="trust-item">
+              <strong>Medical</strong>
+              <span>Provider-guided care</span>
+            </div>
+            <div class="trust-item">
+              <strong>Results</strong>
+              <span>Wellness-focused plans</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="media-card">
+          <!-- Use either a photo or video below. Replace with Fit Responder-approved content. -->
+  <img src="assets/fit-responder-hero.jpg" alt="Fit Responder Luxury Medical Group Wellness Pick" />
+
+                </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="container">
+        <div class="section-title">
+          <h2>Wellness programs built around your goals.</h2>
+          <p>
+            Whether your focus is weight management, recovery, performance, or longevity, Luxury Medical Group helps create a plan that fits your lifestyle.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">1</div>
+            <h3>GLP-1 Weight Management</h3>
+            <p>
+              Personalized support for eligible clients seeking medically guided weight management options, lifestyle structure, and ongoing accountability.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">2</div>
+            <h3>Peptide Wellness</h3>
+            <p>
+              Peptide-focused wellness programs designed to support performance, recovery, healthy aging, and overall optimization.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">3</div>
+            <h3>Concierge Care</h3>
+            <p>
+              A premium experience with personalized communication, provider oversight, and a streamlined path from consultation to plan setup.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section video-trust-section">
+      <div class="container video-trust-grid">
+        <div class="video-showcase">
+          <div class="video-wrapper">
+
+<video id="fitResponderVideo" autoplay muted loop playsinline preload="auto" poster="assets/fit-responder-hero.jpg">
+    <source src="assets/fit-responder-video.mp4" type="video/mp4" />
+</video>
+
+<button class="sound-button" onclick="toggleSound()">
+🔊 Turn Sound On
+</button>
+
+</div>
+        </div>
+        <div class="video-trust-copy">
+          <div class="eyebrow">Fit Responder’s Wellness Pick</div>
+          <h2>A more personal approach to wellness.</h2>
+          <div class="stars">★★★★★</div>
+          <p>
+            Luxury Medical Group delivers provider-guided wellness programs with the privacy,
+            support, and attention expected from a concierge medical experience.
+          </p>
+          <div class="trust-pills">
+            <span>Personalized Wellness</span>
+            <span>GLP-1 Programs</span>
+            <span>Peptide Therapy</span>
+            <span>Concierge Experience</span>
+          </div>
+          <a
+  class="btn"
+  href="/booking.html?source=fit-responder&utm_source=fit-responder&utm_medium=influencer&utm_campaign=fit_responder_wellness"
+>
+  Book Your Free Consultation
+</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container split">
+       <div class="feature-spotlight">
+  <div class="feature-badge">Fit Responder’s Wellness Pick</div>
+
+  <div class="feature-stat">
+    <span>01</span>
+    <div>
+      <strong>Personalized Wellness</strong>
+      <p>Programs tailored to your goals, lifestyle, and medical eligibility.</p>
+    </div>
+  </div>
+
+  <div class="feature-stat">
+    <span>02</span>
+    <div>
+      <strong>GLP-1 Programs</strong>
+      <p>Provider-guided weight management with ongoing support.</p>
+    </div>
+  </div>
+
+  <div class="feature-stat">
+    <span>03</span>
+    <div>
+      <strong>Peptide Therapy</strong>
+      <p>Wellness options focused on recovery, performance, and longevity.</p>
+    </div>
+  </div>
+
+  <div class="feature-stat">
+    <span>04</span>
+    <div>
+      <strong>Concierge Experience</strong>
+      <p>A premium, high-touch process from consultation through follow-up.</p>
+    </div>
+  </div>
+
+  <a
+  class="btn"
+  href="/booking.html?source=fit-responder&utm_source=fit-responder&utm_medium=influencer&utm_campaign=fit_responder_wellness"
+>
+  Book Your Free Consultation
+</a>
+</div>
+
+        <div class="panel">
+          <div class="eyebrow">Why Luxury Medical Group</div>
+          <h2>Premium wellness, personalized from day one.</h2>
+          <p>
+            Luxury Medical Group combines a high-touch client experience with wellness programs tailored to your goals, medical eligibility, and lifestyle.
+          </p>
+
+          <ul>
+            <li>Private consultation request directly through this Fit Responder partner page</li>
+            <li>Personalized GLP-1, peptide, and concierge wellness options</li>
+            <li>Provider-guided review before starting a plan</li>
+            <li>Dedicated lead tracking so Fit Responder’s referred clients are properly attributed</li>
+          </ul>
+
+          <p class="disclaimer">
+            Individual results vary. Services are subject to medical review, eligibility, availability, and provider approval.
+          </p>
+        </div>
+      </div>
+</section>
+
+    <section class="section form-section" id="consult">
+  <div class="container" style="max-width:900px; margin:auto;">
+
+    <div class="panel" style="text-align:center;">
+
+      <div class="eyebrow">
+        Fit Responder's Wellness Pick
+      </div>
+
+      <h2 style="margin-bottom:20px;">
+        Ready to Feel Your Best?
+      </h2>
+
+      <p style="font-size:20px; max-width:700px; margin:0 auto 35px;">
+        Schedule your complimentary consultation with Luxury Medical Group.
+        Choose a convenient appointment time instantly and speak with one of
+        our Certified Peptide Specialists.
+      </p>
+
+      <a
+        class="btn"
+        href="/booking.html?source=fit-responder&utm_source=fit-responder&utm_medium=influencer&utm_campaign=fit_responder_wellness"
+        style="font-size:22px;padding:18px 40px;"
+      >
+        Book My FREE Consultation
+      </a>
+
+      <p class="disclaimer" style="margin-top:35px;">
+        Individual results vary. Treatment recommendations are based on medical
+        evaluation and provider approval.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © <span id="year"></span> Luxury Medical Group. All rights reserved.
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="hipaa.html">HIPAA Notice</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const params = new URLSearchParams(window.location.search);
+  const form = document.querySelector("form");
+
+  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
+    const value = params.get(key);
+    if (value && form) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    }
+  });
+
+  function toggleSound() {
+    const video = document.getElementById("fitResponderVideo");
+    const button = document.querySelector(".sound-button");
+
+    if (!video) return;
+
+    video.muted = !video.muted;
+    video.volume = 1;
+
+    button.innerHTML = video.muted
+      ? "🔊 Turn Sound On"
+      : "🔇 Turn Sound Off";
+  }
+</script></body>
+</html>

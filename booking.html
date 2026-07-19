@@ -322,7 +322,20 @@
 
     const SUBMIT_API =
       "https://luxury-booking-api.vercel.app/api/submit-booking";
+const bookingParams =
+  new URLSearchParams(window.location.search);
 
+const referralSource =
+  bookingParams.get("source") || "";
+
+const utmSource =
+  bookingParams.get("utm_source") || "";
+
+const utmMedium =
+  bookingParams.get("utm_medium") || "";
+
+const utmCampaign =
+  bookingParams.get("utm_campaign") || "";
     const patientTimezone =
       Intl.DateTimeFormat().resolvedOptions().timeZone;
 

@@ -632,19 +632,23 @@ const utmCampaign =
       const formData = new FormData(patientForm);
 
       const payload = {
-        cartId: bookingSession.cartId,
-        cartToken: bookingSession.cartToken,
-        bookableTimeId:
-          bookingSession.bookableTimeId,
-        firstName:
-          String(formData.get("firstName") || "").trim(),
-        lastName:
-          String(formData.get("lastName") || "").trim(),
-        email:
-          String(formData.get("email") || "").trim(),
-        phoneNumber:
-          String(formData.get("phoneNumber") || "").trim()
-      };
+  cartId: bookingSession.cartId,
+  cartToken: bookingSession.cartToken,
+  bookableTimeId:
+    bookingSession.bookableTimeId,
+  firstName:
+    String(formData.get("firstName") || "").trim(),
+  lastName:
+    String(formData.get("lastName") || "").trim(),
+  email:
+    String(formData.get("email") || "").trim(),
+  phoneNumber:
+    String(formData.get("phoneNumber") || "").trim(),
+  referralSource,
+  utmSource,
+  utmMedium,
+  utmCampaign
+};
 
       submitButton.disabled = true;
       submitButton.textContent = "Booking Appointment...";

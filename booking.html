@@ -691,10 +691,13 @@ document
     button.disabled = true;
   });
 
-if (referralSource === "jesse-metcalfe") {
-  window.location.href =
-    "/thank-you.html?source=jesse-metcalfe";
-  return;
+if (
+    referralSource === "jesse-metcalfe" ||
+    referralSource === "fit-responder"
+) {
+    window.location.href =
+        "/thank-you.html?source=" + encodeURIComponent(referralSource);
+    return;
 }
 
 showBookingResult(

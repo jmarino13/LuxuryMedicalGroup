@@ -682,20 +682,26 @@ const utmCampaign =
           throw new Error(boulevardMessage);
         }
 
-        patientForm.reset();
-        dateSelect.disabled = true;
+      patientForm.reset();
+dateSelect.disabled = true;
 
-        document
-          .querySelectorAll(".time-button")
-          .forEach((button) => {
-            button.disabled = true;
-          });
+document
+  .querySelectorAll(".time-button")
+  .forEach((button) => {
+    button.disabled = true;
+  });
 
-        showBookingResult(
-          result?.message ||
-          "Your appointment has been booked successfully. Please check your email for confirmation.",
-          "success"
-        );
+if (referralSource === "jesse-metcalfe") {
+  window.location.href =
+    "/thank-you.html?source=jesse-metcalfe";
+  return;
+}
+
+showBookingResult(
+  result?.message ||
+  "Your appointment has been booked successfully. Please check your email for confirmation.",
+  "success"
+);
       } catch (error) {
         console.error("Booking submission error:", error);
 

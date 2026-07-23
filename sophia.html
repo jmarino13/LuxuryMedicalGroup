@@ -294,13 +294,22 @@
       border: 1px solid rgba(199,164,93,.3);
       box-shadow: 0 24px 70px rgba(0,0,0,.45);
     }
-    .video-wrapper { position: relative; background: #000; }
-    .video-showcase video {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      display: block;
-    }
+   .video-wrapper {
+  position: relative;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-showcase video {
+  width: 100%;
+  height: auto;
+  max-height: 720px;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
     .sound-button {
       position: absolute;
       bottom: 18px;

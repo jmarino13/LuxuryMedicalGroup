@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Authentic Aesthetics × Luxury Medical Group | Book a Consultation</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #020617;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #b89a5a;
+      font-size: clamp(36px, 6vw, 52px);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(24px, 4vw, 34px);
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #b89a5a;
+      margin-top: 35px;
+    }
+
+    #timezone {
+      margin: 25px 0 35px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .booking-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid #b89a5a;
+      border-radius: 18px;
+      padding: 28px;
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #e8e8e8;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #64748b;
+      border-radius: 9px;
+      background: #0f172a;
+      color: white;
+      font-size: 16px;
+    }
+
+    input:focus,
+    select:focus {
+      outline: 2px solid #b89a5a;
+      border-color: #b89a5a;
+    }
+
+    .time-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .time-button {
+      border: 1px solid #b89a5a;
+      background: transparent;
+      color: white;
+      padding: 13px 10px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .time-button:hover,
+    .time-button.selected {
+      background: #b89a5a;
+      color: #020617;
+    }
+
+    .primary-button {
+      width: 100%;
+      margin-top: 15px;
+      background: #b89a5a;
+      color: #020617;
+      border: none;
+      padding: 16px 25px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .primary-button:hover {
+      opacity: 0.9;
+    }
+
+    .primary-button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 22px;
+      padding: 16px;
+      border-radius: 10px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .status.error {
+      background: rgba(185, 28, 28, 0.25);
+      border: 1px solid #ef4444;
+    }
+
+    .status.success {
+      background: rgba(21, 128, 61, 0.25);
+      border: 1px solid #22c55e;
+    }
+
+    .status.loading {
+      background: rgba(184, 154, 90, 0.12);
+      border: 1px solid #b89a5a;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .service-name {
+      text-align: center;
+      color: #b89a5a;
+      margin-bottom: 25px;
+    }
+
+    .timezone-note {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding-top: 35px;
+      }
+
+      .booking-card {
+        padding: 20px;
+      }
+    }
+    .brand-lockup{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto 24px;flex-wrap:wrap}
+    .brand-lockup img{height:105px;width:105px;object-fit:contain;border-radius:8px}
+    .partner-label{font-size:14px;font-weight:bold;letter-spacing:2px;color:#e7d5ad;max-width:310px;text-align:left;line-height:1.7}
+    .partner-label span{color:#fff;padding:0 5px}
+    .partner-intro{color:#cbd5e1;max-width:650px;margin:0 auto 25px;line-height:1.7;font-size:17px}
+    @media(max-width:600px){.partner-label{text-align:center}.brand-lockup{gap:8px}}
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="brand-lockup"><img src="lmg-logo.png" alt="Luxury Medical Group logo"><div class="partner-label">AUTHENTIC AESTHETICS <span>×</span> LUXURY MEDICAL GROUP</div></div>
+    <h1>Your Wellness Journey Starts Here</h1>
+    <p class="partner-intro">A dedicated consultation experience for Authentic Aesthetics clients, provided by Luxury Medical Group.</p>
+
+    <h2>Book Your Free Peptide Consultation</h2>
+
+    <p id="timezone">
+      Checking your timezone...
+    </p>
+
+    <div
+      id="status"
+      class="status loading"
+    >
+      Loading available appointments...
+    </div>
+
+    <section
+      id="booking-card"
+      class="booking-card hidden"
+    >
+      <h3
+        id="service-name"
+        class="service-name"
+      >
+        Free Peptide Consultation
+      </h3>
+
+      <div class="field">
+        <label for="appointment-date">
+          Choose a date
+        </label>
+
+        <select id="appointment-date">
+          <option value="">
+            Select an available date
+          </option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>
+          Choose a time
+        </label>
+
+        <div id="available-times" class="time-grid">
+        </div>
+
+        <p class="timezone-note">
+          Appointment times are displayed in your local timezone.
+        </p>
+      </div>
+
+      <form id="patient-form">
+        <h3>Your Information</h3>
+
+        <div class="field">
+          <label for="first-name">
+            First name
+          </label>
+
+          <input
+            id="first-name"
+            name="firstName"
+            type="text"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="last-name">
+            Last name
+          </label>
+
+          <input
+            id="last-name"
+            name="lastName"
+            type="text"
+            autocomplete="family-name"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="phone-number">
+            Phone number
+          </label>
+
+          <input
+            id="phone-number"
+            name="phoneNumber"
+            type="tel"
+            autocomplete="tel"
+            required
+          >
+        </div>
+
+        <button
+          id="submit-button"
+          class="primary-button"
+          type="submit"
+        >
+          Confirm Appointment
+        </button>
+      </form>
+
+      <div
+        id="booking-result"
+        class="status hidden"
+      >
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // This partner page uses Luxury Medical Group's existing booking backend.
+    const BOOKING_API =
+      "https://luxury-booking-api.vercel.app/api/booking";
+
+    const SUBMIT_API =
+      "https://luxury-booking-api.vercel.app/api/submit-booking";
+const bookingParams =
+  new URLSearchParams(window.location.search);
+
+const referralSource =
+  "authentic-aesthetics";
+
+const utmSource =
+  "authentic_aesthetics";
+
+const utmMedium =
+  bookingParams.get("utm_medium") || "partner_landing_page";
+
+const utmCampaign =
+  bookingParams.get("utm_campaign") || "authentic_aesthetics_lmg";
+    const patientTimezone =
+      Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    const timezoneElement =
+      document.getElementById("timezone");
+
+    const statusElement =
+      document.getElementById("status");
+
+    const bookingCard =
+      document.getElementById("booking-card");
+
+    const serviceNameElement =
+      document.getElementById("service-name");
+
+    const dateSelect =
+      document.getElementById("appointment-date");
+
+    const timesContainer =
+      document.getElementById("available-times");
+
+    const patientForm =
+      document.getElementById("patient-form");
+
+    const submitButton =
+      document.getElementById("submit-button");
+
+    const bookingResult =
+      document.getElementById("booking-result");
+
+    let bookingSession = {
+      cartId: null,
+      cartToken: null,
+      serviceId: null,
+      bookableTimeId: null,
+      selectedDate: null
+    };
+
+    timezoneElement.innerHTML = `
+      Your local timezone:
+      <strong>${escapeHtml(patientTimezone)}</strong>
+    `;
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function showStatus(message, type = "loading") {
+      statusElement.textContent = message;
+      statusElement.className = `status ${type}`;
+      statusElement.classList.remove("hidden");
+    }
+
+    function hideStatus() {
+      statusElement.classList.add("hidden");
+    }
+
+    function showBookingResult(message, type) {
+      bookingResult.textContent = message;
+      bookingResult.className = `status ${type}`;
+      bookingResult.classList.remove("hidden");
+    }
+
+    function clearBookingResult() {
+      bookingResult.textContent = "";
+      bookingResult.className = "status hidden";
+    }
+
+    function formatDateForDisplay(dateString) {
+      const date = new Date(`${dateString}T12:00:00`);
+
+      return new Intl.DateTimeFormat(
+        undefined,
+        {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          year: "numeric"
+        }
+      ).format(date);
+    }
+
+    function formatTimeForDisplay(startTime) {
+      const date = new Date(startTime);
+
+      if (Number.isNaN(date.getTime())) {
+        return startTime;
+      }
+
+      return new Intl.DateTimeFormat(
+        undefined,
+        {
+          hour: "numeric",
+          minute: "2-digit",
+          timeZone: patientTimezone,
+          timeZoneName: "short"
+        }
+      ).format(date);
+    }
+
+    function getServiceName(data) {
+      const categories =
+        data?.cart?.availableCategories || [];
+
+      for (const category of categories) {
+        const items = category?.availableItems || [];
+
+        if (items.length > 0) {
+          return items[0].name;
+        }
+      }
+
+      return "Free Peptide Consult With a Certified Peptide Specialist";
+    }
+
+    function populateDates(availableDates, selectedDate) {
+      dateSelect.innerHTML = `
+        <option value="">
+          Select an available date
+        </option>
+      `;
+
+      availableDates.forEach((dateItem) => {
+        const dateValue = dateItem?.date;
+
+        if (!dateValue) {
+          return;
+        }
+
+        const option = document.createElement("option");
+
+        option.value = dateValue;
+        option.textContent =
+          formatDateForDisplay(dateValue);
+
+        if (dateValue === selectedDate) {
+          option.selected = true;
+        }
+
+        dateSelect.appendChild(option);
+      });
+    }
+
+    function renderTimes(availableTimes) {
+      timesContainer.innerHTML = "";
+      bookingSession.bookableTimeId = null;
+
+      if (!Array.isArray(availableTimes) ||
+          availableTimes.length === 0) {
+        timesContainer.innerHTML = `
+          <p>
+            No appointment times are available for this date.
+          </p>
+        `;
+
+        return;
+      }
+
+      availableTimes.forEach((time) => {
+        if (!time?.id || !time?.startTime) {
+          return;
+        }
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "time-button";
+        button.textContent =
+          formatTimeForDisplay(time.startTime);
+
+        button.addEventListener("click", () => {
+          document
+            .querySelectorAll(".time-button")
+            .forEach((existingButton) => {
+              existingButton.classList.remove("selected");
+            });
+
+          button.classList.add("selected");
+
+          bookingSession.bookableTimeId = time.id;
+
+          clearBookingResult();
+        });
+
+        timesContainer.appendChild(button);
+      });
+    }
+
+    async function loadAvailability(requestedDate = null) {
+      clearBookingResult();
+
+      showStatus(
+        requestedDate
+          ? "Loading appointment times..."
+          : "Loading available appointments...",
+        "loading"
+      );
+
+      timesContainer.innerHTML = "";
+
+      try {
+        const url = new URL(BOOKING_API);
+
+        if (requestedDate) {
+          url.searchParams.set("date", requestedDate);
+        }
+
+        const response = await fetch(url.toString());
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(
+            data?.error ||
+            data?.message ||
+            "Unable to load appointments."
+          );
+        }
+
+        if (data?.boulevardErrors?.length) {
+          throw new Error(
+            data.boulevardErrors[0]?.message ||
+            "Boulevard returned an availability error."
+          );
+        }
+
+        bookingSession.cartId = data?.cartId || null;
+        bookingSession.cartToken = data?.cartToken || null;
+        bookingSession.serviceId = data?.serviceId || null;
+        bookingSession.selectedDate =
+          data?.selectedDate || requestedDate || null;
+
+        if (!bookingSession.cartId ||
+            !bookingSession.cartToken) {
+          throw new Error(
+            "The booking session was not created correctly."
+          );
+        }
+
+        serviceNameElement.textContent =
+          getServiceName(data);
+
+        populateDates(
+          data?.availableDates || [],
+          bookingSession.selectedDate
+        );
+
+        renderTimes(data?.availableTimes || []);
+
+        bookingCard.classList.remove("hidden");
+        hideStatus();
+      } catch (error) {
+        console.error("Booking availability error:", error);
+
+        showStatus(
+          error.message ||
+          "We could not load appointments. Please try again.",
+          "error"
+        );
+      }
+    }
+
+    dateSelect.addEventListener("change", async () => {
+      const selectedDate = dateSelect.value;
+
+      if (!selectedDate) {
+        timesContainer.innerHTML = "";
+        bookingSession.bookableTimeId = null;
+        return;
+      }
+
+      await loadAvailability(selectedDate);
+    });
+
+    patientForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      clearBookingResult();
+
+      if (!bookingSession.bookableTimeId) {
+        showBookingResult(
+          "Please choose an appointment time before confirming.",
+          "error"
+        );
+
+        return;
+      }
+
+      const formData = new FormData(patientForm);
+
+      const payload = {
+  cartId: bookingSession.cartId,
+  cartToken: bookingSession.cartToken,
+  bookableTimeId:
+    bookingSession.bookableTimeId,
+  firstName:
+    String(formData.get("firstName") || "").trim(),
+  lastName:
+    String(formData.get("lastName") || "").trim(),
+  email:
+    String(formData.get("email") || "").trim(),
+  phoneNumber:
+    String(formData.get("phoneNumber") || "").trim(),
+  referralSource,
+  utmSource,
+  utmMedium,
+  utmCampaign
+};
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Booking Appointment...";
+
+      showBookingResult(
+        "Please wait while we confirm your appointment.",
+        "loading"
+      );
+
+      try {
+        const response = await fetch(
+          SUBMIT_API,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || result?.success === false) {
+          const boulevardMessage =
+            result?.errors?.[0]?.message ||
+            result?.error ||
+            result?.message ||
+            "The appointment could not be booked.";
+
+          throw new Error(boulevardMessage);
+        }
+
+      patientForm.reset();
+dateSelect.disabled = true;
+
+document
+  .querySelectorAll(".time-button")
+  .forEach((button) => {
+    button.disabled = true;
+  });
+
+if (
+    referralSource === "jesse-metcalfe" ||
+    referralSource === "fit-responder"
+) {
+    window.location.href =
+        "/thank-you.html?source=" + encodeURIComponent(referralSource);
+    return;
+}
+
+showBookingResult(
+  result?.message ||
+  "Your appointment has been booked successfully. Please check your email for confirmation.",
+  "success"
+);
+      } catch (error) {
+        console.error("Booking submission error:", error);
+
+        showBookingResult(
+          error.message ||
+          "We could not complete your booking. Please try again.",
+          "error"
+        );
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Confirm Appointment";
+      }
+    });
+
+    // Backend must persist referralSource and UTM fields for reporting.
+    loadAvailability();
+  </script>
+</body>
+</html>

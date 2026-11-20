@@ -692,12 +692,18 @@ document
   });
 
 if (
-    referralSource === "jesse-metcalfe" ||
-    referralSource === "fit-responder"
+  [
+    "jesse-metcalfe",
+    "fit-responder",
+    "sophia-prana",
+    "karmel-franklin"
+    "authentic-aesthetics"
+  ].includes(referralSource)
 ) {
-    window.location.href =
-        "/thank-you.html?source=" + encodeURIComponent(referralSource);
-    return;
+  window.location.href =
+    "/thank-you.html?source=" +
+    encodeURIComponent(referralSource);
+  return;
 }
 
 showBookingResult(
